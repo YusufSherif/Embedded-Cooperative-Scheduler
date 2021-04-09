@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/yusufsherif/Desktop/Desktop/ES_Project_1/Queue.c
+stdlib.h
+-
+Queue.h
+/Users/yusufsherif/Desktop/Desktop/ES_Project_1/Queue.h
+
+/Users/yusufsherif/Desktop/Desktop/ES_Project_1/Queue.h
+

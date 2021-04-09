@@ -78,6 +78,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/yusufsherif/Desktop/Desktop/ES_Project_1/Queue.c">
+			<Option target="ES_Project_1"/>
+		</Unit>
+		<Unit filename="/Users/yusufsherif/Desktop/Desktop/ES_Project_1/Queue.h">
+			<Option target="ES_Project_1"/>
+		</Unit>
+		<Unit filename="/Users/yusufsherif/Desktop/Desktop/ES_Project_1/Task.c">
+			<Option target="ES_Project_1"/>
+		</Unit>
+		<Unit filename="/Users/yusufsherif/Desktop/Desktop/ES_Project_1/Task.h">
+			<Option target="ES_Project_1"/>
+		</Unit>
 		<Unit filename="/Users/yusufsherif/Desktop/Desktop/ES_Project_1/main.c">
 			<Option target="ES_Project_1"/>
 		</Unit>

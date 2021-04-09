@@ -143,6 +143,60 @@ ES_Project_1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/build
 .PHONY : ES_Project_1/fast
 
+Queue.o: Queue.c.o
+
+.PHONY : Queue.o
+
+# target to build an object file
+Queue.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/Queue.c.o
+.PHONY : Queue.c.o
+
+Queue.i: Queue.c.i
+
+.PHONY : Queue.i
+
+# target to preprocess a source file
+Queue.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/Queue.c.i
+.PHONY : Queue.c.i
+
+Queue.s: Queue.c.s
+
+.PHONY : Queue.s
+
+# target to generate assembly for a file
+Queue.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/Queue.c.s
+.PHONY : Queue.c.s
+
+Task.o: Task.c.o
+
+.PHONY : Task.o
+
+# target to build an object file
+Task.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/Task.c.o
+.PHONY : Task.c.o
+
+Task.i: Task.c.i
+
+.PHONY : Task.i
+
+# target to preprocess a source file
+Task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/Task.c.i
+.PHONY : Task.c.i
+
+Task.s: Task.c.s
+
+.PHONY : Task.s
+
+# target to generate assembly for a file
+Task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/Task.c.s
+.PHONY : Task.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -179,6 +233,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ES_Project_1"
+	@echo "... Queue.o"
+	@echo "... Queue.i"
+	@echo "... Queue.s"
+	@echo "... Task.o"
+	@echo "... Task.i"
+	@echo "... Task.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ES_Project_1.dir/Queue.c.o"
+  "CMakeFiles/ES_Project_1.dir/Task.c.o"
   "CMakeFiles/ES_Project_1.dir/main.c.o"
   "ES_Project_1"
   "ES_Project_1.pdb"
