@@ -3,9 +3,9 @@
 <title>Static Call Graph - [STM32\STM32.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image STM32\STM32.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Apr 11 01:10:13 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Apr 11 01:21:44 2021
 <BR><P>
-<H3>Maximum Stack Usage =        288 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        280 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 main &rArr; SystemClock_Config &rArr; HAL_RCC_OscConfig &rArr; HAL_InitTick &rArr; HAL_TIM_Base_Init &rArr; TIM_Base_SetConfig
 <P>
@@ -703,17 +703,17 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;isQueueFull
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;expandQueue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReRunMe
+<BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReRunMe
 <LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DispatchDelayed
-<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[8d]"></a>ReRunMe</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, header.o(i.ReRunMe))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = ReRunMe &rArr; QueDelayedTask &rArr; expandDelayedQueue &rArr; realloc &rArr; malloc &rArr; internal_alloc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTask
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QueDelayedTask
 <LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QueTask
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QueDelayedTask
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TaskA
 </UL>
@@ -876,17 +876,17 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QueTask
 </UL>
 
-<P><STRONG><a name="[46]"></a>main</STRONG> (Thumb, 142 bytes, Stack size 16 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = main &rArr; SystemClock_Config &rArr; HAL_RCC_OscConfig &rArr; HAL_InitTick &rArr; HAL_TIM_Base_Init &rArr; TIM_Base_SetConfig
+<P><STRONG><a name="[46]"></a>main</STRONG> (Thumb, 140 bytes, Stack size 8 bytes, main.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = main &rArr; SystemClock_Config &rArr; HAL_RCC_OscConfig &rArr; HAL_InitTick &rArr; HAL_TIM_Base_Init &rArr; TIM_Base_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QueTask
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DispatchDelayed
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dispatch
+<BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USART2_UART_Init
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USART1_UART_Init
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dispatch
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QueTask
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DispatchDelayed
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>

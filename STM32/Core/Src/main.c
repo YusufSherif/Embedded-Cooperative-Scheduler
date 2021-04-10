@@ -99,7 +99,7 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
 	
-	if (SysTick_Config(50*SystemCoreClock / 1000)) {
+	if (SysTick_Config(50*SystemCoreClock / 1000000)) {
         while (1) {  }
   }
 
@@ -119,6 +119,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
 		if (tick_50ms_elapsed) {
 			DispatchDelayed(&delayedQueue,&readyQueue);
 			tick_50ms_elapsed = 0; // Reset the flag (signal 'handled')
@@ -126,8 +128,6 @@ int main(void)
 
 		Dispatch(&readyQueue);
 		
-		return 0; 
-    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
