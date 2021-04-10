@@ -129,18 +129,18 @@ CMakeFiles/ES_Project_1.dir/Task.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ES_Project_1.dir/Task.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yusufsherif/Desktop/Desktop/ES_Project_1/Task.c -o CMakeFiles/ES_Project_1.dir/Task.c.s
 
-CMakeFiles/ES_Project_1.dir/ReRunMe.c.o: CMakeFiles/ES_Project_1.dir/flags.make
-CMakeFiles/ES_Project_1.dir/ReRunMe.c.o: ../ReRunMe.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yusufsherif/Desktop/Desktop/ES_Project_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/ES_Project_1.dir/ReRunMe.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ES_Project_1.dir/ReRunMe.c.o   -c /Users/yusufsherif/Desktop/Desktop/ES_Project_1/ReRunMe.c
+CMakeFiles/ES_Project_1.dir/Header.c.o: CMakeFiles/ES_Project_1.dir/flags.make
+CMakeFiles/ES_Project_1.dir/Header.c.o: ../Header.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yusufsherif/Desktop/Desktop/ES_Project_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/ES_Project_1.dir/Header.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ES_Project_1.dir/Header.c.o   -c /Users/yusufsherif/Desktop/Desktop/ES_Project_1/Header.c
 
-CMakeFiles/ES_Project_1.dir/ReRunMe.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ES_Project_1.dir/ReRunMe.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yusufsherif/Desktop/Desktop/ES_Project_1/ReRunMe.c > CMakeFiles/ES_Project_1.dir/ReRunMe.c.i
+CMakeFiles/ES_Project_1.dir/Header.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ES_Project_1.dir/Header.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yusufsherif/Desktop/Desktop/ES_Project_1/Header.c > CMakeFiles/ES_Project_1.dir/Header.c.i
 
-CMakeFiles/ES_Project_1.dir/ReRunMe.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ES_Project_1.dir/ReRunMe.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yusufsherif/Desktop/Desktop/ES_Project_1/ReRunMe.c -o CMakeFiles/ES_Project_1.dir/ReRunMe.c.s
+CMakeFiles/ES_Project_1.dir/Header.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ES_Project_1.dir/Header.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yusufsherif/Desktop/Desktop/ES_Project_1/Header.c -o CMakeFiles/ES_Project_1.dir/Header.c.s
 
 # Object files for target ES_Project_1
 ES_Project_1_OBJECTS = \
@@ -148,7 +148,7 @@ ES_Project_1_OBJECTS = \
 "CMakeFiles/ES_Project_1.dir/ReadyQueue.c.o" \
 "CMakeFiles/ES_Project_1.dir/DelayedQueue.c.o" \
 "CMakeFiles/ES_Project_1.dir/Task.c.o" \
-"CMakeFiles/ES_Project_1.dir/ReRunMe.c.o"
+"CMakeFiles/ES_Project_1.dir/Header.c.o"
 
 # External object files for target ES_Project_1
 ES_Project_1_EXTERNAL_OBJECTS =
@@ -157,7 +157,7 @@ ES_Project_1: CMakeFiles/ES_Project_1.dir/main.c.o
 ES_Project_1: CMakeFiles/ES_Project_1.dir/ReadyQueue.c.o
 ES_Project_1: CMakeFiles/ES_Project_1.dir/DelayedQueue.c.o
 ES_Project_1: CMakeFiles/ES_Project_1.dir/Task.c.o
-ES_Project_1: CMakeFiles/ES_Project_1.dir/ReRunMe.c.o
+ES_Project_1: CMakeFiles/ES_Project_1.dir/Header.c.o
 ES_Project_1: CMakeFiles/ES_Project_1.dir/build.make
 ES_Project_1: CMakeFiles/ES_Project_1.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yusufsherif/Desktop/Desktop/ES_Project_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable ES_Project_1"

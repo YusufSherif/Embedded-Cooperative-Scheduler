@@ -2,7 +2,7 @@
 // Created by Yusuf Sherif on 10/04/2021.
 //
 
-#include "ReRunMe.h"
+#include "Header.h"
 
 void ReRunMe(void (*task_ptr)(), unsigned int delay, unsigned int priority){
 	if(delay){
@@ -12,4 +12,7 @@ void ReRunMe(void (*task_ptr)(), unsigned int delay, unsigned int priority){
 	} else {
 		QueTask(&readyQueue,task_ptr,priority);
 	}
+}
+void Init() {
+
 }

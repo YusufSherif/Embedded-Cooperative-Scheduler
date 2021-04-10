@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <time.h>
-#include "ReadyQueue.h"
-#include "DelayedQueue.h"
+#include "Header.h"
 
 void task() {
 	printf("%li\n", time(NULL));
@@ -12,26 +11,24 @@ void taskDelayed() {
 }
 
 int main() {
-	ReadyQueue q;
-	DelayedQueue dq;
-	initQueue(&q, 3);
+	initQueue(&readyQueue, 3);
 	for (int i = 0; i < 8; ++i) {
 		for (int j = 0; j < 5; ++j) {
-			QueTask(&q, &task, i);
+			QueTask(&readyQueue, &task, i);
 		}
 	}
-	initDelayedQueue(&dq,10);
+	initDelayedQueue(&delayedQueue,10);
 	for (int i = 0; i < 8; ++i) {
 		Task t;
 		t.priority=1;
 		t.task_ptr = &taskDelayed;
 		t.delay=i;
-		QueDelayedTask(&dq,t);
+		QueDelayedTask(&delayedQueue,t);
 	}
 
 	while (1) {
-		Dispatch(&q);
-		DispatchDelayed(&dq,&q);
+		Dispatch(&readyQueue);
+		DispatchDelayed(&delayedQueue,&readyQueue);
 	}
 
 //	Init(); // initialize the scheduler data structures
