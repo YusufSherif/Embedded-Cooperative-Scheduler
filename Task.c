@@ -4,4 +4,12 @@
 
 #include "Task.h"
 
-void ReRunMe()
+void initTask(Task* task, unsigned int delay, void (*p_task_ptr)(), unsigned int p_priority){
+	task->task_ptr = p_task_ptr;
+	task->delay = delay;
+	task->priority = p_priority;
+}
+
+void ReRunMe(){
+
+}

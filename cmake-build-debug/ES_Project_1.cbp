@@ -78,10 +78,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/yusufsherif/Desktop/Desktop/ES_Project_1/Queue.c">
+		<Unit filename="/Users/yusufsherif/Desktop/Desktop/ES_Project_1/DelayedQueue.c">
 			<Option target="ES_Project_1"/>
 		</Unit>
-		<Unit filename="/Users/yusufsherif/Desktop/Desktop/ES_Project_1/Queue.h">
+		<Unit filename="/Users/yusufsherif/Desktop/Desktop/ES_Project_1/DelayedQueue.h">
+			<Option target="ES_Project_1"/>
+		</Unit>
+		<Unit filename="/Users/yusufsherif/Desktop/Desktop/ES_Project_1/ReadyQueue.c">
+			<Option target="ES_Project_1"/>
+		</Unit>
+		<Unit filename="/Users/yusufsherif/Desktop/Desktop/ES_Project_1/ReadyQueue.h">
 			<Option target="ES_Project_1"/>
 		</Unit>
 		<Unit filename="/Users/yusufsherif/Desktop/Desktop/ES_Project_1/Task.c">

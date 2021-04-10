@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/yusufsherif/Desktop/Desktop/ES_Project_1/Queue.c" "/Users/yusufsherif/Desktop/Desktop/ES_Project_1/cmake-build-debug/CMakeFiles/ES_Project_1.dir/Queue.c.o"
+  "/Users/yusufsherif/Desktop/Desktop/ES_Project_1/DelayedQueue.c" "/Users/yusufsherif/Desktop/Desktop/ES_Project_1/cmake-build-debug/CMakeFiles/ES_Project_1.dir/DelayedQueue.c.o"
+  "/Users/yusufsherif/Desktop/Desktop/ES_Project_1/ReadyQueue.c" "/Users/yusufsherif/Desktop/Desktop/ES_Project_1/cmake-build-debug/CMakeFiles/ES_Project_1.dir/ReadyQueue.c.o"
   "/Users/yusufsherif/Desktop/Desktop/ES_Project_1/Task.c" "/Users/yusufsherif/Desktop/Desktop/ES_Project_1/cmake-build-debug/CMakeFiles/ES_Project_1.dir/Task.c.o"
   "/Users/yusufsherif/Desktop/Desktop/ES_Project_1/main.c" "/Users/yusufsherif/Desktop/Desktop/ES_Project_1/cmake-build-debug/CMakeFiles/ES_Project_1.dir/main.c.o"
   )

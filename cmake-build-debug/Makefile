@@ -143,32 +143,59 @@ ES_Project_1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/build
 .PHONY : ES_Project_1/fast
 
-Queue.o: Queue.c.o
+DelayedQueue.o: DelayedQueue.c.o
 
-.PHONY : Queue.o
+.PHONY : DelayedQueue.o
 
 # target to build an object file
-Queue.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/Queue.c.o
-.PHONY : Queue.c.o
+DelayedQueue.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/DelayedQueue.c.o
+.PHONY : DelayedQueue.c.o
 
-Queue.i: Queue.c.i
+DelayedQueue.i: DelayedQueue.c.i
 
-.PHONY : Queue.i
+.PHONY : DelayedQueue.i
 
 # target to preprocess a source file
-Queue.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/Queue.c.i
-.PHONY : Queue.c.i
+DelayedQueue.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/DelayedQueue.c.i
+.PHONY : DelayedQueue.c.i
 
-Queue.s: Queue.c.s
+DelayedQueue.s: DelayedQueue.c.s
 
-.PHONY : Queue.s
+.PHONY : DelayedQueue.s
 
 # target to generate assembly for a file
-Queue.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/Queue.c.s
-.PHONY : Queue.c.s
+DelayedQueue.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/DelayedQueue.c.s
+.PHONY : DelayedQueue.c.s
+
+ReadyQueue.o: ReadyQueue.c.o
+
+.PHONY : ReadyQueue.o
+
+# target to build an object file
+ReadyQueue.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/ReadyQueue.c.o
+.PHONY : ReadyQueue.c.o
+
+ReadyQueue.i: ReadyQueue.c.i
+
+.PHONY : ReadyQueue.i
+
+# target to preprocess a source file
+ReadyQueue.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/ReadyQueue.c.i
+.PHONY : ReadyQueue.c.i
+
+ReadyQueue.s: ReadyQueue.c.s
+
+.PHONY : ReadyQueue.s
+
+# target to generate assembly for a file
+ReadyQueue.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ES_Project_1.dir/build.make CMakeFiles/ES_Project_1.dir/ReadyQueue.c.s
+.PHONY : ReadyQueue.c.s
 
 Task.o: Task.c.o
 
@@ -233,9 +260,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ES_Project_1"
-	@echo "... Queue.o"
-	@echo "... Queue.i"
-	@echo "... Queue.s"
+	@echo "... DelayedQueue.o"
+	@echo "... DelayedQueue.i"
+	@echo "... DelayedQueue.s"
+	@echo "... ReadyQueue.o"
+	@echo "... ReadyQueue.i"
+	@echo "... ReadyQueue.s"
 	@echo "... Task.o"
 	@echo "... Task.i"
 	@echo "... Task.s"
