@@ -47,6 +47,8 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 
+uint8_t tick_50ms_elapsed = 0;
+
 void TaskA(){
 		// do something here
 		//toggleLED();
@@ -96,6 +98,10 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
+	
+	if (SysTick_Config(50*SystemCoreClock / 1000)) {
+        while (1) {  }
+  }
 
   /* USER CODE END SysInit */
 
@@ -104,7 +110,8 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-	
+	Init(); // initialize the scheduler data structures
+	QueTask(&readyQueue, &TaskA, 0);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -112,11 +119,13 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-		Init(); // initialize the scheduler data structures
-		QueTask(&readyQueue, &TaskA, 0);
-		while (1) {
-			Dispatch(&readyQueue);
-		}
+		if (tick_50ms_elapsed) {
+			DispatchDelayed(&delayedQueue,&readyQueue);
+			tick_50ms_elapsed = 0; // Reset the flag (signal 'handled')
+    }
+
+		Dispatch(&readyQueue);
+		
 		return 0; 
     /* USER CODE BEGIN 3 */
   }
