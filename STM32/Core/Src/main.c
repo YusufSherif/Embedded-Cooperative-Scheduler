@@ -23,6 +23,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "Header.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -44,6 +46,16 @@ UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
+
+void TaskA(){
+		// do something here
+		//toggleLED();
+		// Rerun again after 10 ticks (500 msec)
+		ReRunMe(&TaskA, 10, 0);
+}
+
+DelayedQueue delayedQueue;
+ReadyQueue readyQueue;
 
 /* USER CODE END PV */
 
@@ -92,7 +104,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -100,7 +112,12 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+		Init(); // initialize the scheduler data structures
+		QueTask(&readyQueue, &TaskA, 0);
+		while (1) {
+			Dispatch(&readyQueue);
+		}
+		return 0; 
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
