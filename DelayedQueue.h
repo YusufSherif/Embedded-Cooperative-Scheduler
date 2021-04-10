@@ -23,4 +23,7 @@ unsigned int QueDelayedTask(DelayedQueue* q, Task task);
 void DispatchDelayed(DelayedQueue* q, ReadyQueue* rq);
 unsigned int isDelayedQueueFull(DelayedQueue* q);
 void destructDelayedQueue(DelayedQueue* q);
+
+DelayedQueue delayedQueue;
+
 #endif //ES_PROJECT_1__DELAYEDQUEUE_H_

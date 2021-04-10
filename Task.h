@@ -12,6 +12,5 @@ typedef struct Task {
 } Task;
 
 void initTask(Task* task, unsigned int delay, void (*p_task_ptr)(), unsigned int p_priority);
-void ReRunMe();
 
 #endif //ES_PROJECT_1__TASK_H_

@@ -23,4 +23,7 @@ unsigned int QueTask(ReadyQueue* q, void (*task_ptr)(), unsigned int priority);
 void Dispatch(ReadyQueue* q);
 unsigned int isQueueFull(ReadyQueue* q, unsigned int priority);
 void destructQueue(ReadyQueue* q);
+
+ReadyQueue readyQueue;
+
 #endif //ES_PROJECT_1__READYQUEUE_H_

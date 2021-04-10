@@ -9,7 +9,3 @@ void initTask(Task* task, unsigned int delay, void (*p_task_ptr)(), unsigned int
 	task->delay = delay;
 	task->priority = p_priority;
 }
-
-void ReRunMe(){
-
-}
