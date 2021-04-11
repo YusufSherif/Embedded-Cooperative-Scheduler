@@ -55,7 +55,7 @@ void TaskA(){
 		// Rerun again after 10 ticks (500 msec)
 		HAL_UART_Transmit(&huart1,"This is TaskA\r\n", 15, 1000);
 		//printf("This is TaskA");
-		ReRunMe(&TaskA, 0, 0);
+		ReRunMe(&TaskA, 500, 1);
 }
 
 void TaskB(){
@@ -64,7 +64,13 @@ void TaskB(){
 		// Rerun again after 10 ticks (500 msec)
 		HAL_UART_Transmit(&huart1,"This is TaskB\r\n", 15, 1000);
 		//printf("This is TaskB");
-		ReRunMe(&TaskB, 100, 1);
+		ReRunMe(&TaskB, 100, 0);
+}
+
+void TaskC(){
+		HAL_UART_Transmit(&huart1,"This is TaskC\r\n", 15, 1000);
+		//printf("This is TaskB");
+		ReRunMe(&TaskC, 500, 0);
 }
 
 DelayedQueue delayedQueue;
@@ -122,8 +128,9 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 	Init(); // initialize the scheduler data structures
-	QueTask(&readyQueue, &TaskA, 0);
-	QueTask(&readyQueue, &TaskB, 1);
+	QueTask(&readyQueue, &TaskA, 1);
+	QueTask(&readyQueue, &TaskB, 0);
+	QueTask(&readyQueue, &TaskC, 0);
   /* USER CODE END 2 */
 
   /* Infinite loop */
