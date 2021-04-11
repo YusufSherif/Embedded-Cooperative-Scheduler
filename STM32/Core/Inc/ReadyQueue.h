@@ -6,7 +6,7 @@
 #define ES_PROJECT_1__READYQUEUE_H_
 #include <stdlib.h>
 
-#define READY_EXPANSION_SIZE 2
+#define READY_EXPANSION_SIZE 5
 #define PRIORITY_LEVELS 8
 
 typedef struct ReadyQueue {

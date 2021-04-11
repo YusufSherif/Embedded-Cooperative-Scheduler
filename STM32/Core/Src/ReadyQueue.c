@@ -36,11 +36,12 @@ unsigned int expandQueue(ReadyQueue* q, unsigned int priority){
 //				q->q[priority][i] = 0;
 //			}
 //			q->rear[priority] = newRear;
-			for (unsigned int i = expanded_size - 1, j = q->capacity[priority]-1; i >= q->capacity[priority] && j >= q->front[priority]; i--, j--){
+			for (unsigned int i = expanded_size - 1, j = q->front[priority]+q->capacity[priority]-q->rear[priority]-1; /*i >= q->capacity[priority] &&*/ j >= q->front[priority]; i--, j--){
 				q->q[priority][i] = q->q[priority][j];
 				q->q[priority][j] = 0;
-				q->front[priority]++;
 			}
+			q->front[priority]+=READY_EXPANSION_SIZE;
+
 		}
 
 		q->capacity[priority] = expanded_size;
