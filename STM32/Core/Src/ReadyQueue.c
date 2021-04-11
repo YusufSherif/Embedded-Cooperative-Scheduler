@@ -56,12 +56,10 @@ unsigned int QueTask(ReadyQueue* q, void (*task_ptr)(), unsigned int priority){
 		q->size[priority]++;
 		q->rear[priority]++;
 	} else {
-		if(q->front[priority]>0){
-			q->rear[priority] = 0;
-			q->q[priority][q->rear[priority]]= task_ptr;
-			q->size[priority]++;
-			q->rear[priority]++;
-		} else return 0;
+		q->rear[priority] = 0;
+		q->q[priority][q->rear[priority]]= task_ptr;
+		q->size[priority]++;
+		q->rear[priority]++;
 	}
 	return  1;
 }

@@ -11,10 +11,10 @@
 
 typedef struct ReadyQueue {
 	void (**q[PRIORITY_LEVELS])();
-	unsigned int capacity[PRIORITY_LEVELS];
-	unsigned int size[PRIORITY_LEVELS];
-	unsigned int front[PRIORITY_LEVELS];
-	unsigned int rear[PRIORITY_LEVELS];
+	volatile unsigned int capacity[PRIORITY_LEVELS];
+	volatile unsigned int size[PRIORITY_LEVELS];
+	volatile unsigned int front[PRIORITY_LEVELS];
+	volatile unsigned int rear[PRIORITY_LEVELS];
 } ReadyQueue;
 
 void initQueue(ReadyQueue* q, unsigned int size);

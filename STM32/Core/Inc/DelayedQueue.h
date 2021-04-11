@@ -12,8 +12,8 @@
 
 typedef struct DelayedQueue {
 	Task *q;
-	unsigned int capacity;
-	unsigned int size;
+	volatile unsigned int capacity;
+	volatile unsigned int size;
 } DelayedQueue;
 
 void initDelayedQueue(DelayedQueue* q, unsigned int size);

@@ -53,7 +53,18 @@ void TaskA(){
 		// do something here
 		//toggleLED();
 		// Rerun again after 10 ticks (500 msec)
-		ReRunMe(&TaskA, 10, 0);
+		HAL_UART_Transmit(&huart1,"This is TaskA\r\n", 15, 1000);
+		//printf("This is TaskA");
+		ReRunMe(&TaskA, 0, 0);
+}
+
+void TaskB(){
+		// do something here
+		//toggleLED();
+		// Rerun again after 10 ticks (500 msec)
+		HAL_UART_Transmit(&huart1,"This is TaskB\r\n", 15, 1000);
+		//printf("This is TaskB");
+		ReRunMe(&TaskB, 100, 1);
 }
 
 DelayedQueue delayedQueue;
@@ -112,6 +123,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	Init(); // initialize the scheduler data structures
 	QueTask(&readyQueue, &TaskA, 0);
+	QueTask(&readyQueue, &TaskB, 1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -123,10 +135,11 @@ int main(void)
     /* USER CODE BEGIN 3 */
 		if (tick_50ms_elapsed) {
 			DispatchDelayed(&delayedQueue,&readyQueue);
-			tick_50ms_elapsed = 0; // Reset the flag (signal 'handled')
+			tick_50ms_elapsed = 0;
     }
 
 		Dispatch(&readyQueue);
+		
 		
   }
   /* USER CODE END 3 */
