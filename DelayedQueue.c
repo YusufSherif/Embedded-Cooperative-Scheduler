@@ -12,7 +12,7 @@ void initDelayedQueue(DelayedQueue *q, unsigned int size) {
 
 unsigned int expandDelayedQueue(DelayedQueue *q) {
 	unsigned int expanded_size = q->capacity + DELAYED_EXPANSION_SIZE;
-	void (**temp)() = realloc(q->q, sizeof(q->q[0]) * expanded_size);
+	Task* temp = realloc(q->q, sizeof(q->q[0]) * expanded_size);
 	if (temp) {
 		q->q = temp;
 		q->capacity = expanded_size;
@@ -48,7 +48,7 @@ unsigned int QueDelayedTask(DelayedQueue *q, Task task) {
 void DispatchDelayed(DelayedQueue *q, ReadyQueue *rq) {
 	if (q->size > 0) {
 		for (int i = q->size-1; i >= 0; i--) {
-			Task *tsk = &q->q[i];
+			volatile Task *tsk = &q->q[i];
 			if(!(tsk->delay)){
 				QueTask(rq,tsk->task_ptr,tsk->priority);
 				q->size--;

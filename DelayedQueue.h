@@ -6,15 +6,14 @@
 #define ES_PROJECT_1__DELAYEDQUEUE_H_
 #include "Task.h"
 #include <stdlib.h>
-#include <memory.h>
 #include "ReadyQueue.h"
 
 #define DELAYED_EXPANSION_SIZE 2
 
 typedef struct DelayedQueue {
 	Task *q;
-	unsigned int capacity;
-	unsigned int size;
+	volatile unsigned int capacity;
+	volatile unsigned int size;
 } DelayedQueue;
 
 void initDelayedQueue(DelayedQueue* q, unsigned int size);
@@ -23,7 +22,5 @@ unsigned int QueDelayedTask(DelayedQueue* q, Task task);
 void DispatchDelayed(DelayedQueue* q, ReadyQueue* rq);
 unsigned int isDelayedQueueFull(DelayedQueue* q);
 void destructDelayedQueue(DelayedQueue* q);
-
-DelayedQueue delayedQueue;
 
 #endif //ES_PROJECT_1__DELAYEDQUEUE_H_

@@ -27,11 +27,16 @@ Project File Date:  04/11/2021
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'STM32'
-compiling main.c...
+compiling ReadyQueue.c...
+..\Core\Src\ReadyQueue.c(61): warning:  #513-D: a value of type "volatile void (*)()" cannot be assigned to an entity of type "void (*)()"
+  		q->q[priority][q->rear[priority]]= task_ptr;
+..\Core\Src\ReadyQueue.c(64): warning:  #513-D: a value of type "volatile void (*)()" cannot be assigned to an entity of type "void (*)()"
+  		q->q[priority][q->rear[priority]]= task_ptr;
+..\Core\Src\ReadyQueue.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=8844 RO-data=500 RW-data=28 ZI-data=2044  
+Program Size: Code=11164 RO-data=500 RW-data=28 ZI-data=2140  
 FromELF: creating hex file...
-"STM32\STM32.axf" - 0 Error(s), 0 Warning(s).
+"STM32\STM32.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -54,7 +59,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.4.0
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

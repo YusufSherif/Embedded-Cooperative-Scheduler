@@ -21,6 +21,9 @@ stm32\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpi
 stm32\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h
 stm32\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h
 stm32\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h
+stm32\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc.h
+stm32\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h
+stm32\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc_ex.h
 stm32\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h
 stm32\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h
 stm32\stm32l4xx_hal_msp.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h

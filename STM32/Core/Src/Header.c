@@ -18,7 +18,7 @@ void ReRunMe(void (*task_ptr)(), unsigned int delay, unsigned int priority){
 }
 void Init(void) {
 
-	initQueue(&readyQueue, 3);
+	initQueue(&readyQueue, 5);
 	initDelayedQueue(&delayedQueue,10);
 	
 }

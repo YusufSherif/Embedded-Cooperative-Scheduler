@@ -17,11 +17,11 @@ typedef struct ReadyQueue {
 	volatile unsigned int rear[PRIORITY_LEVELS];
 } ReadyQueue;
 
-void initQueue(ReadyQueue* q, unsigned int size);
-unsigned int expandQueue(ReadyQueue* q, unsigned int priority);
-unsigned int QueTask(ReadyQueue* q, void (*task_ptr)(), unsigned int priority);
+void initQueue(ReadyQueue* q, volatile unsigned int size);
+unsigned int expandQueue(ReadyQueue* q, volatile unsigned int priority);
+unsigned int QueTask(ReadyQueue* q, volatile void (*task_ptr)(), volatile unsigned int priority);
 void Dispatch(ReadyQueue* q);
-unsigned int isQueueFull(ReadyQueue* q, unsigned int priority);
+unsigned int isQueueFull(ReadyQueue* q, volatile unsigned int priority);
 void destructQueue(ReadyQueue* q);
 
 #endif //ES_PROJECT_1__READYQUEUE_H_

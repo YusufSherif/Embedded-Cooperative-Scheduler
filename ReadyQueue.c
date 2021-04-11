@@ -22,20 +22,26 @@ unsigned int expandQueue(ReadyQueue* q, unsigned int priority){
 		q->q[priority] = temp;
 
 		if(q->rear[priority]<=q->front[priority]) {
-			unsigned end = q->rear[priority]<READY_EXPANSION_SIZE ? q->rear[priority] : READY_EXPANSION_SIZE;
-			for (unsigned i = 0, j = q->capacity[priority]; i < end; ++i, j++) {
-				q->q[priority][j] = q->q[priority][i];
-				q->q[priority][i] = 0;
-			}
+//			unsigned end = q->rear[priority]<READY_EXPANSION_SIZE ? q->rear[priority] : READY_EXPANSION_SIZE;
+//			for (unsigned i = 0, j = q->capacity[priority]; i < end; ++i, j++) {
+//				q->q[priority][j] = q->q[priority][i];
+//				q->q[priority][i] = 0;
+//			}
 
-			int newRear = (int)(q->rear[priority])-(READY_EXPANSION_SIZE);
-			if(newRear<0) newRear = (int)(q->capacity[priority])+READY_EXPANSION_SIZE+newRear;
+//			int newRear = (int)(q->rear[priority])-(READY_EXPANSION_SIZE);
+//			if(newRear<0) newRear = (int)(q->capacity[priority])+READY_EXPANSION_SIZE+newRear;
 
-			for (unsigned i = READY_EXPANSION_SIZE, j=0; i < q->rear[priority]; ++i, j++) {
-				q->q[priority][j] = q->q[priority][i];
-				q->q[priority][i] = 0;
+//			for (unsigned i = READY_EXPANSION_SIZE, j=0; i < q->rear[priority]; ++i, j++) {
+//				q->q[priority][j] = q->q[priority][i];
+//				q->q[priority][i] = 0;
+//			}
+//			q->rear[priority] = newRear;
+			for (unsigned int i = expanded_size - 1, j = q->front[priority]+q->capacity[priority]-q->rear[priority]-1; /*i >= q->capacity[priority] &&*/ j >= q->front[priority]; i--, j--){
+				q->q[priority][i] = q->q[priority][j];
+				q->q[priority][j] = 0;
 			}
-			q->rear[priority] = newRear;
+			q->front[priority]+=READY_EXPANSION_SIZE;
+
 		}
 
 		q->capacity[priority] = expanded_size;
@@ -56,12 +62,10 @@ unsigned int QueTask(ReadyQueue* q, void (*task_ptr)(), unsigned int priority){
 		q->size[priority]++;
 		q->rear[priority]++;
 	} else {
-		if(q->front[priority]>0){
-			q->rear[priority] = 0;
-			q->q[priority][q->rear[priority]]= task_ptr;
-			q->size[priority]++;
-			q->rear[priority]++;
-		} else return 0;
+		q->rear[priority] = 0;
+		q->q[priority][q->rear[priority]]= task_ptr;
+		q->size[priority]++;
+		q->rear[priority]++;
 	}
 	return  1;
 }

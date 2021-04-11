@@ -4,7 +4,7 @@
 
 #include "ReadyQueue.h"
 
-void initQueue(ReadyQueue* q, unsigned int size){
+void initQueue(ReadyQueue* q, volatile unsigned int size){
 	void (*task_ptr)();
 	for (int i = 0; i < PRIORITY_LEVELS; ++i) {
 		q->q[i] = calloc(size, sizeof(task_ptr));
@@ -15,8 +15,8 @@ void initQueue(ReadyQueue* q, unsigned int size){
 	}
 }
 
-unsigned int expandQueue(ReadyQueue* q, unsigned int priority){
-	unsigned int expanded_size = q->capacity[priority]+READY_EXPANSION_SIZE;
+unsigned int expandQueue(ReadyQueue* q, volatile unsigned int priority){
+	volatile unsigned int expanded_size = q->capacity[priority]+READY_EXPANSION_SIZE;
 	void (**temp)() = realloc(q->q[priority],sizeof(q->q[priority][0])*expanded_size);
 	if(temp) {
 		q->q[priority] = temp;
@@ -51,7 +51,7 @@ unsigned int expandQueue(ReadyQueue* q, unsigned int priority){
 	return 0;
 }
 
-unsigned int QueTask(ReadyQueue* q, void (*task_ptr)(), unsigned int priority){
+unsigned int QueTask(ReadyQueue* q, volatile void (*task_ptr)(), volatile unsigned int priority){
 	if(isQueueFull(q,priority)){
 		if(!expandQueue(q,priority))
 			return 0;
@@ -59,14 +59,12 @@ unsigned int QueTask(ReadyQueue* q, void (*task_ptr)(), unsigned int priority){
 
 	if(q->rear[priority]!=q->capacity[priority]){
 		q->q[priority][q->rear[priority]]= task_ptr;
-		q->size[priority]++;
-		q->rear[priority]++;
 	} else {
 		q->rear[priority] = 0;
 		q->q[priority][q->rear[priority]]= task_ptr;
+	}
 		q->size[priority]++;
 		q->rear[priority]++;
-	}
 	return  1;
 }
 
@@ -85,7 +83,7 @@ void Dispatch(ReadyQueue* q) {
 	}
 }
 
-unsigned int isQueueFull(ReadyQueue* q, unsigned int priority) {
+unsigned int isQueueFull(ReadyQueue* q, volatile unsigned int priority) {
 	return q->size[priority]==q->capacity[priority];
 }
 

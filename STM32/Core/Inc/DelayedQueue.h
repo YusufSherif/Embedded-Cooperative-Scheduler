@@ -18,7 +18,7 @@ typedef struct DelayedQueue {
 
 void initDelayedQueue(DelayedQueue* q, unsigned int size);
 unsigned int expandDelayedQueue(DelayedQueue* q);
-unsigned int QueDelayedTask(DelayedQueue* q, Task task);
+unsigned int QueDelayedTask(DelayedQueue* q, volatile Task task);
 void DispatchDelayed(DelayedQueue* q, ReadyQueue* rq);
 unsigned int isDelayedQueueFull(DelayedQueue* q);
 void destructDelayedQueue(DelayedQueue* q);

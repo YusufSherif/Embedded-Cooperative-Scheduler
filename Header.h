@@ -9,5 +9,5 @@
 #include "ReadyQueue.h"
 
 void ReRunMe(void (*task_ptr)(), unsigned int delay, unsigned int priority);
-void Init();
+void Init(void);
 #endif //ES_PROJECT_1__HEADER_H_

@@ -21,20 +21,20 @@ unsigned int expandDelayedQueue(DelayedQueue *q) {
 	return 0;
 }
 
-unsigned int QueDelayedTask(DelayedQueue *q, Task task) {
+unsigned int QueDelayedTask(DelayedQueue *q, volatile Task task) {
 	if (isDelayedQueueFull(q)) {
 		if (!expandDelayedQueue(q))
 			return 0;
 	}
 
-	int insertIndex = 0;
+	volatile int insertIndex = 0;
 	for (insertIndex = 0; insertIndex < q->size; ++insertIndex) {
 		if(q->q[insertIndex].delay<task.delay){
 			break;
 		}
 	}
 	if(insertIndex!=q->size) {
-		for (unsigned int i = q->size; i > insertIndex; i--) {
+		for (volatile unsigned int i = q->size; i > insertIndex; i--) {
 			q->q[i] = q->q[i-1];
 		}
 		//memcpy(&(q->q[insertIndex + 1]), &(q->q[insertIndex]), q->size - insertIndex);
