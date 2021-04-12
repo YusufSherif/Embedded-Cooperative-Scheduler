@@ -55,35 +55,40 @@ UART_HandleTypeDef huart2;
 
 uint8_t tick_50ms_elapsed = 0;
 
+uint8_t temp_high = 0;
+unsigned int temp_threshold = ADC_2V_VALUE;
+
 void TaskA(){
-		// do something here
-		//toggleLED();
-		// Rerun again after 10 ticks (500 msec)
-		HAL_UART_Transmit(&huart1,"This is TaskA\r\n", 15, 1000);
-		//printf("This is TaskA");
-		ReRunMe(&TaskA, 500, 1);
+	static uint8_t led_on = 0;
+	if(temp_high){
+		if(led_on){
+			HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,0);
+			led_on = 0;
+		} else {
+			HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,1);
+			led_on = 1;
+		}
+	}
+	ReRunMe(&TaskA, 1000, 1);
 }
 
 void TaskB(){
 	HAL_ADC_Start(&hadc1);
 	HAL_ADC_PollForConversion(&hadc1, 100);
 	volatile uint32_t result = HAL_ADC_GetValue(&hadc1);
-	if (result > ADC_2V_VALUE)
+	if (result > temp_threshold)
 	{
-		HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,1);
+		temp_high = 1;
 		//HAL_UART_Transmit(&huart1,"Ehra2ny aboos edeek\r\n", 22, 1000);
 	} else {
+		temp_high = 0;
 		HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,0);
+
 	}
-	ReRunMe(&TaskB, 100, 0);
+	ReRunMe(&TaskB, 30000/50, 0);
 
 }
 
-void TaskC(){
-		HAL_UART_Transmit(&huart1,"This is TaskC\r\n", 15, 1000);
-		//printf("This is TaskB");
-		ReRunMe(&TaskC, 500, 0);
-}
 
 DelayedQueue delayedQueue;
 ReadyQueue readyQueue;
@@ -129,7 +134,7 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
 	
-	if (SysTick_Config(50*SystemCoreClock / 1000000)) {
+	if (SysTick_Config(500*SystemCoreClock / 1000000)) {
         while (1) {  }
   }
 
@@ -144,7 +149,22 @@ int main(void)
 	Init(); // initialize the scheduler data structures
 	QueTask(&readyQueue, &TaskA, 1);
 	QueTask(&readyQueue, &TaskB, 0);
-	QueTask(&readyQueue, &TaskC, 0);
+	
+	uint8_t uart_buffer[5] = {0,0,0,0,0};
+	HAL_UART_Transmit(&huart1, "Enter temperature threshold (range: 0000 - 3723): ", strlen("Enter temperature threshold (range: 0000 - 3723): ")*sizeof(uint8_t), HAL_MAX_DELAY);
+	HAL_UART_Receive(&huart1, uart_buffer, 4*sizeof(uint8_t), HAL_MAX_DELAY);
+	uint8_t out_buffer[7];
+	out_buffer[0] = uart_buffer[0];
+	out_buffer[1] = uart_buffer[1];
+	out_buffer[2] = uart_buffer[2];
+	out_buffer[3] = uart_buffer[3];
+	out_buffer[4] = '\r';
+	out_buffer[5] = '\n';
+
+	HAL_UART_Transmit(&huart1, out_buffer, 7*sizeof(uint8_t), HAL_MAX_DELAY);
+	
+	temp_threshold = atoi((uart_buffer));
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */
