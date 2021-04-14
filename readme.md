@@ -34,4 +34,4 @@ The DelayedQueue data structure is implemented as a sorted 1D array. During inse
     * https://drive.google.com/file/d/1lO_Seca9FWIK4PvMzzLz6ITA9YR9HDtq/view?usp=sharing 
     * https://drive.google.com/file/d/1lBRZIcHpf6pCezvhPyBe5lHdr7O20G2Y/view?usp=sharing 
   * Video: 
-   * https://drive.google.com/file/d/1IGHnN6GUlTuvRhSzse0y4LGea4aO8wAy/view?usp=sharing 
+    * https://drive.google.com/file/d/1IGHnN6GUlTuvRhSzse0y4LGea4aO8wAy/view?usp=sharing 
