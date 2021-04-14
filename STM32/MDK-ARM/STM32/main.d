@@ -41,3 +41,5 @@ stm32\main.o: ../Core/Inc/Task.h
 stm32\main.o: ../Core/Inc/DelayedQueue.h
 stm32\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 stm32\main.o: ../Core/Inc/ReadyQueue.h
+stm32\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+stm32\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
